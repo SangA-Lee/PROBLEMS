@@ -39,7 +39,7 @@ and then
 <img src="./img/OpenCV_FFMPEG_UTP.png" width="50%" height="50%" title="OpenCV_FFMPEG_UTP" alt="OpenCV_FFMPEG_UTP"></img>
 </p>
 
-success that rtsp is taken udp but missed the data
+forcly set the rtsp is taken udp and then success that show video but missed the data
 
 ### 3rd try - fail
 
@@ -225,5 +225,7 @@ link with my project
 set the additional include directories on visual studio 2017 but i can not link the modules
 
 (ofcourse, did copy the dll files on my project)
+
+i don't know why
 
 ### 4th try
