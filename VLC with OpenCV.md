@@ -10,13 +10,15 @@
 
     : [download VLC](https://www.videolan.org/vlc/download-windows.ko.html)
     
-### 1st try
+### 1st try - fail
 
         cv::VideoCapture capture(rtsp_url, cv::CAP_FFMPEG);
         
 > [rtsp @ 0000018067cc24a0] method SETUP failed: 461 Client error
 
-### 2nd try
+rtsp is taken default tcp on ffmpeg of opencv
+
+### 2nd try - fail
 
 set Environment Variable 
 
@@ -37,7 +39,9 @@ and then
 <img src="./img/OpenCV_FFMPEG_UTP.png" width="50%" height="50%" title="OpenCV_FFMPEG_UTP" alt="OpenCV_FFMPEG_UTP"></img>
 </p>
 
-### 3rd try
+success that rtsp is taken udp but missed the data
+
+### 3rd try - fail
 
 GStreamer download MSVC 64-bit [Run-time](https://gstreamer.freedesktop.org/data/pkg/windows/1.18.1/msvc/gstreamer-1.0-msvc-x86_64-1.18.1.msi) and [Development](https://gstreamer.freedesktop.org/data/pkg/windows/1.18.1/msvc/gstreamer-1.0-devel-msvc-x86_64-1.18.1.msi)
 
@@ -217,3 +221,9 @@ link with my project
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.344: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsty4mdec.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsty4mdec.dll': 지정된 모듈을 찾을 수 없습니다.  
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.386: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 지정된 모듈을 찾을 수 없습니다.  
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.420: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 지정된 모듈을 찾을 수  없습니다.
+
+set the additional include directories on visual studio 2017 but i can not link the modules
+
+(ofcourse, did copy the dll files on my project)
+
+### 4th try
