@@ -16,7 +16,7 @@
         
 > [rtsp @ 0000018067cc24a0] method SETUP failed: 461 Client error
 
-*rtsp is taken default tcp on ffmpeg of opencv*
+* *rtsp is taken default tcp on ffmpeg of opencv*
 
 ### 2nd try - fail
 
@@ -39,7 +39,7 @@ and then
 <img src="./img/OpenCV_FFMPEG_UTP.png" width="50%" height="50%" title="OpenCV_FFMPEG_UTP" alt="OpenCV_FFMPEG_UTP"></img>
 </p>
 
-*forcly set the rtsp is taken udp and then success that show video but missed the data*
+* *forcly set the rtsp is taken udp and then success that show video but missed the data*
 
 ### 3rd try - fail
 
@@ -222,10 +222,8 @@ link with my project
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.386: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 지정된 모듈을 찾을 수 없습니다.  
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.420: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 지정된 모듈을 찾을 수  없습니다.
 
-*set the additional include directories on visual studio 2017 but i can not link the modules*
-
-*(ofcourse, did copy the dll files on my project)*
-
+* *set the additional include directories on visual studio 2017 but i can not link the modules*  
+*(ofcourse, did copy the dll files on my project)*  
 *i don't know why*
 
 ### 4th try
