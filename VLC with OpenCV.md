@@ -312,11 +312,13 @@ if you check this error set environment variable
             [variable]    |                      [value]
          PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
          
-([partially reference](https://m.blog.naver.com/PostView.nhn?blogId=myrandy1&logNo=220374362061&proxyReferer=https:%2F%2Fwww.google.com%2F))open /path/to/MinGW/msys/1.0/msys.bat and add under the "start %WD%sh --login -i"
+refer to [partially reference](https://m.blog.naver.com/PostView.nhn?blogId=myrandy1&logNo=220374362061&proxyReferer=https:%2F%2Fwww.google.com%2F), do that
 
-* set path=/path/to/gstreamer/1.0/mingw_x86_64  
-* set ld_library_path=/path/to/gstreamer/1.0/mingw_x86_64/lib  
-* set pkg_config_path=/path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
+* open /path/to/MinGW/msys/1.0/msys.bat and add under the "start %WD%sh --login -i"  
+
+> set path=/path/to/gstreamer/1.0/mingw_x86_64  
+> set ld_library_path=/path/to/gstreamer/1.0/mingw_x86_64/lib  
+> set pkg_config_path=/path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
 
 you can check video test
 
