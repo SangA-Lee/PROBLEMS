@@ -310,4 +310,5 @@ link with my project
 if you check this error set environment variable
 
             [variable]    |                      [value]
-         PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/msvc_x86_64/lib/pkgconfig
+         PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
+
