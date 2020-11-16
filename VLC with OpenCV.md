@@ -222,6 +222,11 @@ link with my project
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.386: Failed to load plugin 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 지정된 모듈을 찾을 수 없습니다.  
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.420: Failed to load plugin 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 지정된 모듈을 찾을 수  없습니다.
 
+if you check this error set environment variable
+
+            [variable]    |                      [value]
+         PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/msvc_x86_64/lib/pkgconfig
+
 * *set the additional include directories on visual studio 2017 but i can not link the modules*  
 *(ofcourse, did copy the dll files on my project)*  
 *i don't know why*
