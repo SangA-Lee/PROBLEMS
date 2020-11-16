@@ -311,4 +311,10 @@ if you check this error set environment variable
 
             [variable]    |                      [value]
          PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
+         
+open /path/to/MinGW/msys/1.0/msys.bat and add under the "start %WD%sh --login -i"
+
+* set path=/path/to/gstreamer/1.0/mingw_x86_64  
+* set ld_library_path=/path/to/gstreamer/1.0/mingw_x86_64/lib  
+* set pkg_config_path=/path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
 
