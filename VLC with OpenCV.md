@@ -319,3 +319,11 @@ open /path/to/MinGW/msys/1.0/msys.bat and add under the "start %WD%sh --login -i
 * set pkg_config_path=/path/to/gstreamer/1.0/mingw_x86_64/lib/pkgconfig
 
 [partially reference](https://m.blog.naver.com/PostView.nhn?blogId=myrandy1&logNo=220374362061&proxyReferer=https:%2F%2Fwww.google.com%2F)
+
+you can check video test
+
+        cv::VideoCapture capture("videotestsrc ! appsink", cv::CAP_GSTREAMER);
+        
+<p align="center">
+<img src="./img/videotest.png" title="videotest" alt="videotest"></img>
+</p>
