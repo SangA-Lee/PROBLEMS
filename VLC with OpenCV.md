@@ -222,13 +222,92 @@ link with my project
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.386: Failed to load plugin 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgsty4menc.dll': 지정된 모듈을 찾을 수 없습니다.  
 > (test.exe:31608): GStreamer-WARNING **: 14:43:48.420: Failed to load plugin 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 'D:\gstreamer\1.0\msvc_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 지정된 모듈을 찾을 수  없습니다.
 
-if you check this error set environment variable
-
-            [variable]    |                      [value]
-         PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/msvc_x86_64/lib/pkgconfig
-
 * *set the additional include directories on visual studio 2017 but i can not link the modules*  
 *(ofcourse, did copy the dll files on my project)*  
 *i don't know why*
 
 ### 4th try
+
+GStreamer download WinGW 64-bit [Run-time](https://gstreamer.freedesktop.org/data/pkg/windows/1.18.1/mingw/gstreamer-1.0-mingw-x86_64-1.18.1.msi) and [Development](https://gstreamer.freedesktop.org/data/pkg/windows/1.18.1/mingw/gstreamer-1.0-devel-mingw-x86_64-1.18.1.msi)
+
+and then, set environment variable
+
+          [variable]    |                      [value]
+         GSTREAMER_DIR  | /path/to/gstreamer/1.0/mingw_x86_64
+        GST_PLUGIN_PATH | /path/to/gstreamer/1.0/mingw_x86_64/lib/gstreamer-1.0
+
+OpenCV build with GStreamer
+
+link with my project
+
+        cv::VideoCapture capture(rtsp_url, cv::CAP_GSTREAMER);
+
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.728: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstaudiofx.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstaudiofx.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.758: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstaudiovisualizers.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstaudiovisualizers.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.774: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstbz2.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstbz2.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.784: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstcairo.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstcairo.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.802: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstclosedcaption.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstclosedcaption.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.822: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstd3d11.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstd3d11.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.832: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdash.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdash.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.846: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdebugutilsbad.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdebugutilsbad.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.861: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdecklink.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdecklink.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.876: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdtls.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdtls.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.890: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdtmf.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdtmf.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.905: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdv.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstdv.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.921: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstflac.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstflac.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.936: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstgdkpixbuf.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstgdkpixbuf.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.951: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstgio.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstgio.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.967: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsthls.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsthls.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:09.990: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstisomp4.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstisomp4.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.006: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstjpeg.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstjpeg.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.020: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstkate.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstkate.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.035: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstlame.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstlame.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.053: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstlibvisual.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstlibvisual.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.070: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstmatroska.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstmatroska.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.083: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstmpg123.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstmpg123.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.095: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstmultifile.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstmultifile.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.111: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstnice.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstnice.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.126: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstnvcodec.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstnvcodec.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.141: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstogg.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstogg.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.156: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopengl.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopengl.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.171: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopenh264.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopenh264.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.180: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopenjpeg.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopenjpeg.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.201: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopus.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopus.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.216: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopusparse.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstopusparse.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.231: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstpango.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstpango.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.246: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstpng.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstpng.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.264: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrfbsrc.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrfbsrc.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.280: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrsvg.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrsvg.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.297: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtmp2.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtmp2.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.318: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.333: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtpmanager.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtpmanager.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.348: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtpmanagerbad.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtpmanagerbad.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.363: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtsp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtsp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.378: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtspclientsink.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstrtspclientsink.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.393: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsbc.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsbc.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.408: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsctp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsctp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.423: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsdpelem.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsdpelem.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.440: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsmoothstreaming.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsmoothstreaming.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.455: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsoundtouch.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsoundtouch.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.470: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsoup.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsoup.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.486: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstspandsp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstspandsp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.500: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstspectrum.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstspectrum.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.518: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstspeex.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstspeex.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.530: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsrt.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsrt.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.549: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsrtp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstsrtp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.563: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttaglib.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttaglib.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.578: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttcp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttcp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.594: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttheora.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttheora.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.613: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttypefindfunctions.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgsttypefindfunctions.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.625: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstudp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstudp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.646: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstvideoparsersbad.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstvideoparsersbad.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.664: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstvorbis.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstvorbis.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.677: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstwavpack.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstwavpack.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.690: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstwebrtc.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstwebrtc.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.706: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstwebrtcdsp.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstwebrtcdsp.dll': 지정된 모듈을 찾을 수 없습니다.  
+> (test.exe:11360): GStreamer-WARNING **: 12:00:10.720: Failed to load plugin 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 'D:\gstreamer\1.0\mingw_x86_64\lib\gstreamer-1.0\libgstzbar.dll': 지정된 모듈을 찾을 수 없습니다.  
+
+if you check this error set environment variable
+
+            [variable]    |                      [value]
+         PKG_CONFIG_PATH  | /path/to/gstreamer/1.0/msvc_x86_64/lib/pkgconfig
